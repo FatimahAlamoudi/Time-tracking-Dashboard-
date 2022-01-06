@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+/* Font size: 18px (card titles e.g. Work, Play) */
+/* The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px */
+:root{
+    --light-red--work: hsl(15, 100%, 70%);
+    --soft-blue-play: hsl(195, 74%, 62%);
+    --light-red-study: hsl(348, 100%, 68%);
+    --lime-green-exercise: hsl(145, 58%, 55%);
+    --voilet-social: hsl(264, 64%, 52%);
+    --soft-orange-self-care: hsl(43, 84%, 65%);
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue:hsl(236, 100%, 87%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--very-dark-blue);
+    color: white;
+}
+
+h1{
+    font-weight: 300;
+    font-size: 2em;
+}
+
+#report{
+    color: var(--pale-blue);
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dashboard{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-areas: 'bio work play study'
+                          'bio exercise social self-care';
+    gap: 2em;
+}
+
+.card{
+    background-color: var(--dark-blue);
+    width: 12vw;
+    border-radius: 1em;
+}
+
+.card:hover{
+    background-color: var(--desaturated-blue);
+}
+
+.icon{
+    float: right;
+    width: 3.2em;
+    height: 3.2em;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    align-items: center;
+}
+
+.hours{
+    font-size: 3em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+
+}
+
+
+.end{
+    color:var(--pale-blue);
+}
+
+.bottom{
+    margin: 2em;
+    font-size: 1em;
+}
+
+.title #ellipsis{
+    height: .3em;
+}
+
+.bio{
+    grid-area: bio;
+    background-color: var(--dark-blue);
+    border-radius: 2em;
+}
+
+
+.profile{
+    width: 5em;
+    height: 5em;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-bottom: 2em;
+}
+
+.bio .top{
+    background-color: var(--desaturated-blue);
+    border-radius: 1em;
+    padding: 2em;
+    height: 35vh;
+}
+
+.bio .bottom{
+    padding: 2em;
+    font-size: 1em;  
+}
+
+.bio .bottom a{
+    margin-bottom: .5em;
+    display: block;
+}
+
+.bio .bottom a:hover{
+    cursor: pointer;
+}
+
+.work{
+    grid-area: work;
+    position: relative;
+}
+
+.work .top{
+    background-color: var(--light-red--work);
+    height: 5vh;
+    border-radius: 1em;
+}
+
+
+.play{
+    grid-area: play;
+    height: 26vh;
+
+}
+
+.play .top{
+    background-color: var(--soft-blue-play);
+    height: 5vh;
+    border-radius: 1em;
+
+}
+
+.study{
+    grid-area: study;
+    height: 26vh;
+}
+
+.study .top{
+    background-color: var(--light-red-study);
+    height: 5vh;
+    border-radius: 1em;
+}
+
+.exercise{
+    grid-area: exercise;
+    height: 26vh;
+}
+
+.exercise .top{
+    background-color: var(--lime-green-exercise);
+    height: 5vh;
+    border-radius: 1em;
+}
+
+.social{
+    grid-area: social;
+    height: 26vh;
+}
+
+.social .top{
+    background-color: var(--voilet-social);
+    height: 5vh;
+    border-radius: 1em;
+}
+
+.self-care{
+    grid-area: self-care;
+    height: 26vh;
+}
+
+.self-care .top{
+    background-color: var(--soft-orange-self-care);
+    height: 5vh;
+    border-radius: 1em;
+}
+
+@media(max-width: 375px){
+    .dashboard{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-areas: 'bio'
+                            'work'
+                             'play'
+                             'study'
+                             'exercise'
+                             'social'
+                             'self-care'
+    }
+
+    .card{
+        width: 40vw;
+    }
+
+    .hours{
+        font-size: 2em;
+    }
+
+}
